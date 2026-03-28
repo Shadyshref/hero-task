@@ -9,6 +9,7 @@ client/dist/
 server/dist/
 
 .env
+.env.example
 server/.env
 client/.env
 .env.local
