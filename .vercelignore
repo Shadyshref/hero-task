@@ -1,5 +1,4 @@
 client/
-server/
 *.md
 .git
 node_modules

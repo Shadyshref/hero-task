@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '../../../components/ui/button';
 import { Input } from '../../../components/ui/input';
-import { deleteProject, fetchProjects } from '../api/projects';
+import { deleteProjectAction, fetchProjects } from '../actions/projects';
 import type { ProjectSummary } from '../types';
 
 interface ProjectsDialogProps {
@@ -61,7 +61,7 @@ export function ProjectsDialog({ onClose, onLoadProject }: ProjectsDialogProps) 
     }
 
     try {
-      await deleteProject(projectId);
+      await deleteProjectAction(projectId);
       setProjects((currentProjects) => currentProjects.filter((project) => project.id !== projectId));
     } catch {
       window.alert('Project delete failed.');

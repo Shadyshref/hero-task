@@ -10,11 +10,9 @@ coverage/
 client/dist/
 server/dist/
 
-.env
 .env.example
 server/.env
 client/.env
-.env.local
 .env.*.local
 
 *.log
@@ -31,3 +29,4 @@ Thumbs.db
 
 .vscode/
 .idea/
+config.bat
