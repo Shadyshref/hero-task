@@ -15,7 +15,11 @@ import {
 } from '../utils/editor-helpers';
 import { copyToClipboard, pasteFromClipboard } from '../utils/clipboard';
 import type { EditorItem, StatusState } from '../types';
-import { createProject, fetchProject, updateProject } from '../../projects/api/projects';
+import {
+  createProjectAction,
+  fetchProject,
+  updateProjectAction,
+} from '../../projects/actions/projects';
 import { ProjectsDialog } from '../../projects/components/ProjectsDialog';
 
 export default function EditorPage() {
@@ -105,13 +109,13 @@ export default function EditorPage() {
 
     try {
       if (projectId) {
-        await updateProject(projectId, nextProjectName, items);
+        await updateProjectAction(projectId, nextProjectName, items);
         setProjectName(nextProjectName);
         showStatus('Project updated.', 'success');
         return;
       }
 
-      const createdProject = await createProject(nextProjectName, items);
+      const createdProject = await createProjectAction(nextProjectName, items);
       setProjectId(createdProject.id);
       setProjectName(nextProjectName);
       showStatus('Project saved.', 'success');

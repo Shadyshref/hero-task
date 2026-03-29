@@ -10,11 +10,9 @@ coverage/
 client/dist/
 server/dist/
 
-.env
 .env.example
 server/.env
 client/.env
-.env.local
 .env.*.local
 
 *.log
@@ -29,5 +27,5 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
-.vscode/
 .idea/
+config.bat
